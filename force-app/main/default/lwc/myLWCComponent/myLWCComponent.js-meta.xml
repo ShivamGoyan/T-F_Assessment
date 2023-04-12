@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>57.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightningCommunity__Default</target>
+        <target>lightning__RecordPage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property
+                name="recordId"
+                type="String"
+                label="Record Id"
+                description="Automatically bind the page's record id to the component variable"
+                default="{!recordId}" />
+            <property
+                name="objectApiName"
+                type="String"
+                label="Object Name"
+                description="Automatically bind the page's object name to the component variable"
+                default="{!objectApiName}" />
+        </targetConfig>
+        <!-- <targetConfig targets="lightning__RecordPage">
+            <property name="fieldApiNames" 
+            type="String" 
+            label="Field API Names"
+            description="Automatically bind the record's field api names to the component variable"
+            default="{!fieldApiNames}" />
+        </targetConfig> -->
+    </targetConfigs>
+</LightningComponentBundle>

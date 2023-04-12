@@ -1,0 +1,25 @@
+<template>
+    <div class="slds-card">
+        <div class="slds-card__header slds-grid slds-wrap">
+            <div class="slds-col slds-size_6-of-12">
+                <h2>{relatedListLabel}</h2>
+            </div>
+            <div class="slds-col slds-size_6-of-12">
+                <lightning-button label="New" onclick={handleNew}></lightning-button>
+            </div>
+        </div>
+        <div class="slds-card__body slds-var-p-horizontal_x-small slds-var-p-vertical_small">
+            <template if:true={data}>
+                <lightning-datatable
+                        data={data}
+                        columns={columns}
+                        key-field="Id"
+                        sorted-by={sortedBy}
+                        sorted-direction={sortedDirection}
+                        onsort={handleSort}
+                        onrowaction={handleRowAction}>
+                </lightning-datatable>
+            </template>
+        </div>
+    </div>
+</template>
